@@ -1,0 +1,50 @@
+public class Habitante {
+	private String dni;
+	private String nombre;
+	private String apellido1;
+	private String apellido2;
+	private int edad;
+	private String sexo;
+
+	public void setDni (String ni){
+		dni = ni;
+	}
+	public String getDni(){
+		return dni;
+	}
+
+	public void setNombre (String nom){
+		nombre = nom;
+	}
+	public String getNombre(){
+		return nombre;
+	}
+
+	public void setApellido1 (String ap1){
+		apellido1 = ap1;
+	}
+	public String getApellido1(){
+		return apellido1;
+	}
+
+	public void setApellido2 (String ap2){
+		apellido2 = ap2;
+	}
+	public String getApellido2(){
+		return apellido2;
+	}
+
+		public void setEdad (int ed){
+		edad = ed;
+	}
+	public int getEdad(){
+		return edad;
+	}
+
+	public void setSexo (String sex){
+		sexo = sex;
+	}
+	public String getSexo(){
+		return sexo;
+	}
+}
