@@ -1,9 +1,9 @@
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 public class Elecciones {
 
 	public static void main(String args[]) {
-
 
 		String dni, nombre, apellido1, apellido2, sexo, poblacion, localidad, alcalde, direccioni, direccionep;
 		int edad, codigopostal, pisos, extension;
@@ -85,6 +85,31 @@ public class Elecciones {
 		System.out.println("\n---Espacio publico---");
 		System.out.println("Direccion: " + espu.getDireccion());
 		System.out.println("Extension: " + espu.getExtension() + " metros cuadrados");
+
+		try {
+			String linea;
+			File archivo = new File("/home/zubiri/AriketakJava/java2_elecciones/src/listadoPartidos.txt");
+			FileReader fr = new FileReader(archivo);
+			BufferedReader br = new BufferedReader(fr);
+			ArrayList <String> partidos = new ArrayList <String>();
+			linea = br.readLine();
+
+			System.out.println("\n---Partidos---");
+			while (linea != null) {
+				partidos.add(linea);
+				linea = br.readLine();
+			}
+			System.out.println("Listado de partidos:");
+			for(int i=0; i<partidos.size(); i++)
+			{
+				System.out.println(partidos.get(i));
+			}
+
+			partidos.clear();
+
+		} catch (IOException ioe) {
+			System.out.println("Error E/S: " + ioe);
+		}
 
 	}
 }
