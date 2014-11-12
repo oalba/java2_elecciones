@@ -116,6 +116,9 @@ String[] palabra = linea.split(",");
 				linea = br.readLine();
 			}
 			partido.setNombre(palabra[0]);
+			partido.setSiglas(palabra[1]);
+			partido.setPresidente(palabra[2]);
+			partido.setNumeroAfiliados(palabra[3]);
 			System.out.println(partido.getNombre());
 			System.out.println("Listado de partidos:");
 			for(int i=0; i<partidos.size(); i++)
