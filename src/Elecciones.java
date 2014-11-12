@@ -12,7 +12,8 @@ public class Elecciones {
 		Ayuntamiento ayuntamiento = new Ayuntamiento();
 		Inmueble inmueble = new Inmueble();
 		EspacioPublico espu = new EspacioPublico();
-		
+		Partido partido = new Partido();
+	/*	
 		Scanner sc = new Scanner(System.in);
 		System.out.print("\nIntroduce los siguientes datos del habitante: \n");
 		System.out.print("DNI: ");
@@ -85,6 +86,19 @@ public class Elecciones {
 		System.out.println("\n---Espacio publico---");
 		System.out.println("Direccion: " + espu.getDireccion());
 		System.out.println("Extension: " + espu.getExtension() + " metros cuadrados");
+*/
+/*
+
+String colores = "rojo,amarillo,verde,azul,morado,marrón";
+String[] arrayColores = colores.split(",");
+ 
+// En este momento tenemos un array en el que cada elemento es un color.
+for (int i = 0; i < arrayColores.length; i++) {
+	System.out.println(arrayColores[i]);
+}
+
+*/
+//String[] palabra = linea.split(",");
 
 		try {
 			String linea;
@@ -93,12 +107,16 @@ public class Elecciones {
 			BufferedReader br = new BufferedReader(fr);
 			ArrayList <String> partidos = new ArrayList <String>();
 			linea = br.readLine();
-
+String[] palabra = linea.split(",");
 			System.out.println("\n---Partidos---");
 			while (linea != null) {
 				partidos.add(linea);
+				//String[] palabra = linea.split(",");
+				//ArrayList <String> palabra = new ArrayList <String>(Arrays.asList(linea.split(",")));
 				linea = br.readLine();
 			}
+			partido.setNombre(palabra[0]);
+			System.out.println(partido.getNombre());
 			System.out.println("Listado de partidos:");
 			for(int i=0; i<partidos.size(); i++)
 			{
