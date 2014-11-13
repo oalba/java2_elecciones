@@ -12,7 +12,7 @@ public class Elecciones {
 		Ayuntamiento ayuntamiento = new Ayuntamiento();
 		Inmueble inmueble = new Inmueble();
 		EspacioPublico espu = new EspacioPublico();
-		Partido partido = new Partido();
+		//Partido partido = new Partido();
 	/*	
 		Scanner sc = new Scanner(System.in);
 		System.out.print("\nIntroduce los siguientes datos del habitante: \n");
@@ -87,39 +87,69 @@ public class Elecciones {
 		System.out.println("Direccion: " + espu.getDireccion());
 		System.out.println("Extension: " + espu.getExtension() + " metros cuadrados");
 */
-/*
-
-String colores = "rojo,amarillo,verde,azul,morado,marrón";
-String[] arrayColores = colores.split(",");
- 
-// En este momento tenemos un array en el que cada elemento es un color.
-for (int i = 0; i < arrayColores.length; i++) {
-	System.out.println(arrayColores[i]);
-}
-
-*/
-//String[] palabra = linea.split(",");
+		//String linea;
+		System.out.println("\n---Partidos---");
+		ArrayList<Partido> partidos = new ArrayList<Partido>();
+		File archivo = new File("/home/zubiri/AriketakJava/java2_elecciones/src/listadoPartidos.txt");
+		//FileReader fr = new FileReader(archivo);
+		//BufferedReader br = new BufferedReader(fr);
+		Scanner s = null;
 
 		try {
+			s = new Scanner(archivo);
+			//linea = br.readLine();
+			
+			
+			while (s.hasNextLine()) {
+				String linea = s.nextLine();
+				String[] palabra = linea.split(", ");
+				Partido partidoel = new Partido();
+
+				//partidos.add(linea);
+				partidoel.setNombre(palabra[0]);
+				partidoel.setSiglas(palabra[1]);
+				partidoel.setPresidente(palabra[2]);
+				partidoel.setNumeroAfiliados(palabra[3]);
+
+				partidos.add(partidoel);
+				
+				
+			}
+			Iterator<Partido> itrPartidos = partidos.iterator();
+			while(itrPartidos.hasNext()){
+				Partido partido = itrPartidos.next();
+				System.out.println("Nombre del partido: " + partido.getNombre());
+				System.out.println("Siglas del partido: " + partido.getSiglas());
+				System.out.println("Presidente del partido: " + partido.getPresidente());
+				System.out.println("Numero de afiliados en el partido: " + partido.getNumeroAfiliados());
+				System.out.println();
+			}
+			
+			/*try {
 			String linea;
 			File archivo = new File("/home/zubiri/AriketakJava/java2_elecciones/src/listadoPartidos.txt");
 			FileReader fr = new FileReader(archivo);
 			BufferedReader br = new BufferedReader(fr);
-			ArrayList <String> partidos = new ArrayList <String>();
+			//ArrayList <String> partidos = new ArrayList <String>();
 			linea = br.readLine();
-String[] palabra = linea.split(",");
+			
 			System.out.println("\n---Partidos---");
 			while (linea != null) {
-				partidos.add(linea);
-				//String[] palabra = linea.split(",");
-				//ArrayList <String> palabra = new ArrayList <String>(Arrays.asList(linea.split(",")));
+				String[] palabra = linea.split(", ");
+				//partidos.add(linea);
+				partido.setNombre(palabra[0]);
+				partido.setSiglas(palabra[1]);
+				partido.setPresidente(palabra[2]);
+				partido.setNumeroAfiliados(palabra[3]);
 				linea = br.readLine();
-			}
-			partido.setNombre(palabra[0]);
-			partido.setSiglas(palabra[1]);
-			partido.setPresidente(palabra[2]);
-			partido.setNumeroAfiliados(palabra[3]);
-			System.out.println(partido.getNombre());
+				System.out.println("Nombre del partido: " + partido.getNombre());
+				System.out.println("Siglas del partido: " + partido.getSiglas());
+				System.out.println("Presidente del partido: " + partido.getPresidente());
+				System.out.println("Numero de afiliados en el partido: " + partido.getNumeroAfiliados());
+				System.out.println();
+				partidos.clear();
+			}*/
+			/*
 			System.out.println("Listado de partidos:");
 			for(int i=0; i<partidos.size(); i++)
 			{
@@ -127,6 +157,7 @@ String[] palabra = linea.split(",");
 			}
 
 			partidos.clear();
+			*/
 
 		} catch (IOException ioe) {
 			System.out.println("Error E/S: " + ioe);

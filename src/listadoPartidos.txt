@@ -1,4 +1,4 @@
-PSOE, partido popular, juanito, 200
-PP
-Bildu
-Podemos
+Partido Socialista Obrero Español, PSOE, Juanito, 200
+Partido Popular, PP, Antonio, 100
+Bildu, Bildu, Antxon, 500
+Podemos, Podemos, Pablo, 150
