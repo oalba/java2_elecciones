@@ -12,8 +12,7 @@ public class Elecciones {
 		Ayuntamiento ayuntamiento = new Ayuntamiento();
 		Inmueble inmueble = new Inmueble();
 		EspacioPublico espu = new EspacioPublico();
-		//Partido partido = new Partido();
-	/*	
+	
 		Scanner sc = new Scanner(System.in);
 		System.out.print("\nIntroduce los siguientes datos del habitante: \n");
 		System.out.print("DNI: ");
@@ -34,6 +33,18 @@ public class Elecciones {
 		System.out.print("Edad: ");
 		edad = sc.nextInt();
 		habitante.setEdad(edad);
+
+		try{
+            
+            FileWriter fw = new FileWriter("/home/zubiri/AriketakJava/java2_elecciones/src/censo.txt", true);
+            fw.write(dni + ", " + nombre + ", " + apellido1 + ", " + apellido2 + ", " + edad + ", " + sexo + "\n");
+            fw.close(); 
+            FileReader fr = new FileReader("/home/zubiri/AriketakJava/java2_elecciones/src/censo.txt");
+            fr.close();
+            
+        }catch(IOException e){
+            System.out.println("Error E/S: "+e);
+        }
 
 		System.out.print("\nIntroduce los siguientes datos del ayuntamiento: \n");
 		System.out.print("Poblacion: ");
@@ -86,33 +97,68 @@ public class Elecciones {
 		System.out.println("\n---Espacio publico---");
 		System.out.println("Direccion: " + espu.getDireccion());
 		System.out.println("Extension: " + espu.getExtension() + " metros cuadrados");
-*/
-		//String linea;
+
+		System.out.println("\n---Habitantes mayores de 18 años---");
+		ArrayList<Habitante> habitantes = new ArrayList<Habitante>();
+		File archihabit = new File("/home/zubiri/AriketakJava/java2_elecciones/src/censo.txt");
+		Scanner sca = null;
+
+		try {
+			sca = new Scanner(archihabit);
+			
+			while (sca.hasNextLine()) {
+				String habi = sca.nextLine();
+				String[] dato = habi.split(", ");
+				Habitante habitdat = new Habitante();
+
+				habitdat.setDni(dato[0]);
+				habitdat.setNombre(dato[1]);
+				habitdat.setApellido1(dato[2]);
+				habitdat.setApellido2(dato[3]);
+				habitdat.setSexo(dato[5]);
+				int edadhabit = Integer.parseInt(dato[4]);
+				habitdat.setEdad(edadhabit);
+
+				habitantes.add(habitdat);
+				
+			}
+			Iterator<Habitante> itrHabitantes = habitantes.iterator();
+			while(itrHabitantes.hasNext()){
+				Habitante habitdat = itrHabitantes.next();
+				if (habitdat.getEdad() >= 18) {
+				System.out.println("DNI del habitante: " + habitdat.getDni());
+				System.out.println("Nombre del habitante: " + habitdat.getNombre());
+				System.out.println("Primer apellido del habitante: " + habitdat.getApellido1());
+				System.out.println("Segundo apellido del habitante: " + habitdat.getApellido2());
+				System.out.println("Edad del habitante: " + habitdat.getEdad());
+				System.out.println("Sexo del habitante: " + habitdat.getSexo());
+				System.out.println();
+				}
+			}
+
+		} catch (IOException ioe) {
+			System.out.println("Error E/S: " + ioe);
+		}
+
 		System.out.println("\n---Partidos---");
 		ArrayList<Partido> partidos = new ArrayList<Partido>();
 		File archivo = new File("/home/zubiri/AriketakJava/java2_elecciones/src/listadoPartidos.txt");
-		//FileReader fr = new FileReader(archivo);
-		//BufferedReader br = new BufferedReader(fr);
 		Scanner s = null;
 
 		try {
 			s = new Scanner(archivo);
-			//linea = br.readLine();
-			
 			
 			while (s.hasNextLine()) {
 				String linea = s.nextLine();
 				String[] palabra = linea.split(", ");
 				Partido partidoel = new Partido();
 
-				//partidos.add(linea);
 				partidoel.setNombre(palabra[0]);
 				partidoel.setSiglas(palabra[1]);
 				partidoel.setPresidente(palabra[2]);
 				partidoel.setNumeroAfiliados(palabra[3]);
 
 				partidos.add(partidoel);
-				
 				
 			}
 			Iterator<Partido> itrPartidos = partidos.iterator();
@@ -124,40 +170,6 @@ public class Elecciones {
 				System.out.println("Numero de afiliados en el partido: " + partido.getNumeroAfiliados());
 				System.out.println();
 			}
-			
-			/*try {
-			String linea;
-			File archivo = new File("/home/zubiri/AriketakJava/java2_elecciones/src/listadoPartidos.txt");
-			FileReader fr = new FileReader(archivo);
-			BufferedReader br = new BufferedReader(fr);
-			//ArrayList <String> partidos = new ArrayList <String>();
-			linea = br.readLine();
-			
-			System.out.println("\n---Partidos---");
-			while (linea != null) {
-				String[] palabra = linea.split(", ");
-				//partidos.add(linea);
-				partido.setNombre(palabra[0]);
-				partido.setSiglas(palabra[1]);
-				partido.setPresidente(palabra[2]);
-				partido.setNumeroAfiliados(palabra[3]);
-				linea = br.readLine();
-				System.out.println("Nombre del partido: " + partido.getNombre());
-				System.out.println("Siglas del partido: " + partido.getSiglas());
-				System.out.println("Presidente del partido: " + partido.getPresidente());
-				System.out.println("Numero de afiliados en el partido: " + partido.getNumeroAfiliados());
-				System.out.println();
-				partidos.clear();
-			}*/
-			/*
-			System.out.println("Listado de partidos:");
-			for(int i=0; i<partidos.size(); i++)
-			{
-				System.out.println(partidos.get(i));
-			}
-
-			partidos.clear();
-			*/
 
 		} catch (IOException ioe) {
 			System.out.println("Error E/S: " + ioe);

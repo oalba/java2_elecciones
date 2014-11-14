@@ -1,0 +1,4 @@
+72213654Q, Josu, Urrutia, Azpeitia, 22, Hombre
+72212345Q, Jon, Harri, Malta, 16, Hombre
+71234564Q, Josune, Garmendia, Etxeberria, 18, Mujer
+75894561S, Jokin, Aizpe, Jujo, 23, Hombre
