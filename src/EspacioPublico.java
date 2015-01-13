@@ -1,6 +1,16 @@
 public class EspacioPublico {
-	private int extension;
-	private String direccion;
+	protected int extension;
+	protected String direccion;
+
+	public EspacioPublico(int extension, String direccion){
+		this.extension = extension;
+		this.direccion = direccion;
+	}
+
+	/*public EspacioPublico(int extension, String direccion) {
+		this.Extension = extension;
+		this.Direccion = direccion;
+	}*/
 
 	public void setExtension (int ex){
 		extension = ex;
