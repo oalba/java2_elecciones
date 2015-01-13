@@ -2,3 +2,5 @@
 72212345Q, Jon, Harri, Malta, 16, Hombre
 71234564Q, Josune, Garmendia, Etxeberria, 18, Mujer
 75894561S, Jokin, Aizpe, Jujo, 23, Hombre
+75555555D, Aka, Ala, Mas, 12, Mujer
+12345678S, Antxon, Urrutia, Egundo, 65, Hombre
