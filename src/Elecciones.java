@@ -8,6 +8,7 @@ public class Elecciones {
 		String dni, nombre, apellido1, apellido2, sexo, poblacion, localidad, alcalde, direccioni, direccionep;
 		int edad, codigopostal, pisos, extension;
 
+		//---------------------------------------------------
 		Habitante habitante = new Habitante();
 		Ayuntamiento ayuntamiento = new Ayuntamiento();
 		Inmueble inmueble = new Inmueble();
