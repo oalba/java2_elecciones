@@ -1,8 +1,8 @@
-public class EspacioPublico {
-	protected int extension;
-	protected String direccion;
+class EspacioPublico {
+	int extension;
+	String direccion;
 
-	public EspacioPublico(int extension, String direccion){
+	private EspacioPublico(int extension, String direccion){
 		this.extension = extension;
 		this.direccion = direccion;
 	}
@@ -12,21 +12,21 @@ public class EspacioPublico {
 		this.Direccion = direccion;
 	}*/
 
-	public EspacioPublico() {
+	EspacioPublico() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void setExtension (int ex){
+	void setExtension (int ex){
 		extension = ex;
 	}
-	public int getExtension(){
+	final int getExtension(){
 		return extension;
 	}
 
-	public void setDireccion (String dir){
+	void setDireccion (String dir){
 		direccion = dir;
 	}
-	public String getDireccion(){
+	final String getDireccion(){
 		return direccion;
 	}
 }

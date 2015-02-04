@@ -1,26 +1,26 @@
-public class Inmueble {
+class Inmueble {
 	private String direccion;
 	private int codigopostal;
 	private int pisos;
 
-	public void setDireccion (String dir){
+	void setDireccion (String dir){
 		direccion = dir;
 	}
-	public String getDireccion(){
+	final String getDireccion(){
 		return direccion;
 	}
 
-	public void setCodigoPostal (int cp){
+	void setCodigoPostal (int cp){
 		codigopostal = cp;
 	}
-	public int getCodigoPostal(){
+	final int getCodigoPostal(){
 		return codigopostal;
 	}
 
-	public void setPisos (int piso){
+	void setPisos (int piso){
 		pisos = piso;
 	}
-	public int getPisos(){
+	final int getPisos(){
 		return pisos;
 	}
 }

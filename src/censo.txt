@@ -4,3 +4,6 @@
 75894561S, Jokin, Aizpe, Jujo, 23, Hombre
 75555555D, Aka, Ala, Mas, 12, Mujer
 12345678S, Antxon, Urrutia, Egundo, 65, Hombre
+11111111q, odei, alba, aaa, 12, hombre
+72554894S, Matxin, Garmendia, Barandi, 45, Hombre
+75894567T, OOOO, AAAAA, BBBB, 30, Mujer

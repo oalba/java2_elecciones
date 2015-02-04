@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Elecciones {
+class Elecciones {
 
 	public static void main(String args[]) {
 

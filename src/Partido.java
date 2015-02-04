@@ -1,34 +1,34 @@
-public class Partido {
+class Partido {
 	private String nombre;
 	private String siglas;
 	private String presidente;
 	private String numeroAfiliados;
 
-	public void setNombre (String nom){
+	void setNombre (String nom){
 		nombre = nom;
 	}
-	public String getNombre(){
+	String getNombre(){
 		return nombre;
 	}
 
-	public void setSiglas (String sig){
+	void setSiglas (String sig){
 		siglas = sig;
 	}
-	public String getSiglas(){
+	String getSiglas(){
 		return siglas;
 	}
 
-	public void setPresidente (String pre){
+	void setPresidente (String pre){
 		presidente = pre;
 	}
-	public String getPresidente(){
+	String getPresidente(){
 		return presidente;
 	}
 
-	public void setNumeroAfiliados (String na){
+	void setNumeroAfiliados (String na){
 		numeroAfiliados = na;
 	}
-	public String getNumeroAfiliados(){
+	String getNumeroAfiliados(){
 		return numeroAfiliados;
 	}
 }
