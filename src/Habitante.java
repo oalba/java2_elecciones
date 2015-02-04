@@ -1,10 +1,10 @@
 class Habitante {
-	private String dni;
-	private String nombre;
-	private String apellido1;
-	private String apellido2;
-	private int edad;
-	private String sexo;
+	private static String dni;
+	private static String nombre;
+	private static String apellido1;
+	private static String apellido2;
+	private static int edad;
+	private static String sexo;
 
 	void setDni (String ni){
 		dni = ni;
@@ -46,5 +46,15 @@ class Habitante {
 	}
 	final String getSexo(){
 		return sexo;
+	}
+
+	public static void imprimirHabi(){
+		System.out.println("\n---Habitante---");
+		System.out.println("DNI: " + dni);
+		System.out.println("Nombre: " + nombre);
+		System.out.println("Primer apellido: " + apellido1);
+		System.out.println("Segundo apellido: " + apellido2);
+		System.out.println("Sexo: " + sexo);
+		System.out.println("Edad: " + edad);
 	}
 }

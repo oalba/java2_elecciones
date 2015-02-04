@@ -77,13 +77,15 @@ class Elecciones {
 		direccionep = sc.next();
 		espu.setDireccion(direccionep);
 
-		System.out.println("\n---Habitante---");
+		Habitante.imprimirHabi();
+
+		/*System.out.println("\n---Habitante---");
 		System.out.println("DNI: " + habitante.getDni());
 		System.out.println("Nombre: " + habitante.getNombre());
 		System.out.println("Primer apellido: " + habitante.getApellido1());
 		System.out.println("Segundo apellido: " + habitante.getApellido2());
 		System.out.println("Sexo: " + habitante.getSexo());
-		System.out.println("Edad: " + habitante.getEdad());
+		System.out.println("Edad: " + habitante.getEdad());*/
 
 		System.out.println("\n---Ayuntamiento---");
 		System.out.println("Poblacion: " + ayuntamiento.getPoblacion());
