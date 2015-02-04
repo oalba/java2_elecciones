@@ -12,6 +12,10 @@ public class EspacioPublico {
 		this.Direccion = direccion;
 	}*/
 
+	public EspacioPublico() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void setExtension (int ex){
 		extension = ex;
 	}
