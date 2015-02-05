@@ -11,3 +11,4 @@
 78945612W, Leire, Arrizu, Masto, 27, Mujer
 75418435T, Mari, Luz, Gimenez, 30, Mujer
 75412458D, Jon, Auzmen, Jimen, 21, Mujer
+74584587X, Telmo, Arzelus, Etxegarai, 23, Hombre

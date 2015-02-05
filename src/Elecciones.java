@@ -70,7 +70,22 @@ class Elecciones {
 		direccionep = sc.next();
 		EspacioPublico.setDireccion(direccionep);
 
-		//Habitante.imprimirHabi();
+		Ayuntamiento.imprimirAyu();
+		Inmueble.imprimirInmu();
+		EspacioPublico.imprimirEsPu();
+		Habitante.imprimirHabi();
+		Partido.imprimirParti();
+
+
+
+
+
+
+
+
+
+
+		////Habitante.imprimirHabi2();
 /*
 		System.out.println("\n---Habitante---");
 		System.out.println("DNI: " + habitante.getDni());
@@ -80,26 +95,26 @@ class Elecciones {
 		System.out.println("Sexo: " + habitante.getSexo());
 		System.out.println("Edad: " + habitante.getEdad());
 */
-		Ayuntamiento.imprimirAyu();
+		//Ayuntamiento.imprimirAyu();
 		/*System.out.println("\n---Ayuntamiento---");
 		System.out.println("Poblacion: " + ayuntamiento.getPoblacion());
 		System.out.println("Localidad: " + ayuntamiento.getLocalidad());
 		System.out.println("Alcalde: " + ayuntamiento.getAlcalde());*/
 
-		Inmueble.imprimirInmu();
+		//Inmueble.imprimirInmu();
 /*
 		System.out.println("\n---Inmueble---");
 		System.out.println("Direccion: " + inmueble.getDireccion());
 		System.out.println("Codigo postal: " + inmueble.getCodigoPostal());
 		System.out.println("Numero de pisos: " + inmueble.getPisos());
 */
-		EspacioPublico.imprimirEsPu();
+		//EspacioPublico.imprimirEsPu();
 /*
 		System.out.println("\n---Espacio publico---");
 		System.out.println("Direccion: " + EspacioPublico.getDireccion());
 		System.out.println("Extension: " + EspacioPublico.getExtension() + " metros cuadrados");
 */
-		Habitante.imprimirHabi2();
+		//Habitante.imprimirHabi();
 /*
 		System.out.println("\n---Habitantes mayores de 18 años---");
 		ArrayList<Habitante> habitantes = new ArrayList<Habitante>();
@@ -144,6 +159,8 @@ class Elecciones {
 		}
 */
 
+		//Partido.imprimirParti();
+/*
 		System.out.println("\n---Partidos---");
 		ArrayList<Partido> partidos = new ArrayList<Partido>();
 		File archivo = new File("./listadoPartidos.txt");
@@ -178,6 +195,7 @@ class Elecciones {
 		} catch (IOException ioe) {
 			System.out.println("Error E/S: " + ioe);
 		}
+		*/
 
 	}
 }

@@ -50,7 +50,7 @@ class Habitante {
 		return sexo;
 	}
 
-	/*static void imprimirHabi(){
+	/*static void imprimirHabi2(){
 		System.out.println("\n---Habitante---");
 		System.out.println("DNI: " + dni);
 		System.out.println("Nombre: " + nombre);
@@ -60,7 +60,7 @@ class Habitante {
 		System.out.println("Edad: " + edad);
 	}*/
 
-	static void imprimirHabi2(){
+	static void imprimirHabi(){
 		System.out.println("\n---Habitantes mayores de 18 años---");
 		ArrayList<Habitante> habitantes = new ArrayList<Habitante>();
 		File archihabit = new File("./censo.txt");
