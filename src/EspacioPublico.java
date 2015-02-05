@@ -1,6 +1,6 @@
 class EspacioPublico {
-	int extension;
-	String direccion;
+	static int extension;
+	static String direccion;
 
 	private EspacioPublico(int extension, String direccion){
 		this.extension = extension;
@@ -12,21 +12,23 @@ class EspacioPublico {
 		this.Direccion = direccion;
 	}*/
 
-	EspacioPublico() {
-		// TODO Auto-generated constructor stub
-	}
-
-	void setExtension (int ex){
+	static void setExtension (int ex){
 		extension = ex;
 	}
 	final int getExtension(){
 		return extension;
 	}
 
-	void setDireccion (String dir){
+	static void setDireccion (String dir){
 		direccion = dir;
 	}
 	final String getDireccion(){
 		return direccion;
+	}
+
+	static void imprimirEsPu(){
+		System.out.println("\n---Espacio publico---");
+		System.out.println("Direccion: " + direccion);
+		System.out.println("Extension: " + extension + " metros cuadrados");
 	}
 }

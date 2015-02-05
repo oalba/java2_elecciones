@@ -1,26 +1,33 @@
 class Inmueble {
-	private String direccion;
-	private int codigopostal;
-	private int pisos;
+	private static String direccion;
+	private static int codigoPostal;
+	private static int pisos;
 
-	void setDireccion (String dir){
+	static void setDireccion (String dir){
 		direccion = dir;
 	}
 	final String getDireccion(){
 		return direccion;
 	}
 
-	void setCodigoPostal (int cp){
-		codigopostal = cp;
+	static void setCodigoPostal (int cp){
+		codigoPostal = cp;
 	}
 	final int getCodigoPostal(){
-		return codigopostal;
+		return codigoPostal;
 	}
 
-	void setPisos (int piso){
+	static void setPisos (int piso){
 		pisos = piso;
 	}
 	final int getPisos(){
 		return pisos;
+	}
+
+	static void imprimirInmu(){
+		System.out.println("\n---Inmueble---");
+		System.out.println("Direccion: " + direccion);
+		System.out.println("Codigo postal: " + codigoPostal);
+		System.out.println("Numero de pisos: " + pisos);
 	}
 }

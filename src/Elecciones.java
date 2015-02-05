@@ -10,37 +10,36 @@ class Elecciones {
 
 		//---------------------------------------------------
 		Habitante habitante = new Habitante();
-		Ayuntamiento ayuntamiento = new Ayuntamiento();
-		Inmueble inmueble = new Inmueble();
-		EspacioPublico espu = new EspacioPublico();
+		//Ayuntamiento ayuntamiento = new Ayuntamiento();
+		//Inmueble inmueble = new Inmueble();
+		//EspacioPublico espu = new EspacioPublico();
 	
 		Scanner sc = new Scanner(System.in);
 		System.out.print("\nIntroduce los siguientes datos del habitante: \n");
 		System.out.print("DNI: ");
-		dni = sc.next();
-		habitante.setDni(dni);
+		habitante.setDni(sc.next());
 		System.out.print("Nombre: ");
-		nombre = sc.next();
-		habitante.setNombre(nombre);
+		habitante.setNombre(sc.next());
 		System.out.print("Primer apellido: ");
-		apellido1 = sc.next();
-		habitante.setApellido1(apellido1);
+		habitante.setApellido1(sc.next());
 		System.out.print("Segundo apellido: ");
-		apellido2 = sc.next();
-		habitante.setApellido2(apellido2);
+		habitante.setApellido2(sc.next());
 		System.out.print("Sexo (Hombre o Mujer): ");
-		sexo = sc.next();
-		habitante.setSexo(sexo);
+		habitante.setSexo(sc.next());
 		System.out.print("Edad: ");
-		edad = sc.nextInt();
-		habitante.setEdad(edad);
+		habitante.setEdad(sc.nextInt());
 
 		try{
             
-            FileWriter fw = new FileWriter("/home/zubiri/AriketakJava/java2_elecciones/src/censo.txt", true);
-            fw.write(dni + ", " + nombre + ", " + apellido1 + ", " + apellido2 + ", " + edad + ", " + sexo + "\n");
+            FileWriter fw = new FileWriter("./censo.txt", true);
+            fw.write(habitante.dni + ", " 
+            	+ habitante.nombre + ", " 
+            	+ habitante.apellido1 + ", " 
+            	+ habitante.apellido2 + ", " 
+            	+ habitante.edad + ", " 
+            	+ habitante.sexo + "\n");
             fw.close(); 
-            FileReader fr = new FileReader("/home/zubiri/AriketakJava/java2_elecciones/src/censo.txt");
+            FileReader fr = new FileReader("./censo.txt");
             fr.close();
             
         }catch(IOException e){
@@ -49,61 +48,62 @@ class Elecciones {
 
 		System.out.print("\nIntroduce los siguientes datos del ayuntamiento: \n");
 		System.out.print("Poblacion: ");
-		poblacion = sc.next();
-		ayuntamiento.setPoblacion(poblacion);
+		Ayuntamiento.setPoblacion(sc.next());
 		System.out.print("Localidad: ");
-		localidad = sc.next();
-		ayuntamiento.setLocalidad(localidad);
+		Ayuntamiento.setLocalidad(sc.next());
 		System.out.print("Nombre del alcalde: ");
-		alcalde = sc.next();
-		ayuntamiento.setAlcalde(alcalde);
+		Ayuntamiento.setAlcalde(sc.next());
 
 		System.out.print("\nIntroduce los siguientes datos del inmueble: \n");
 		System.out.print("Direccion: ");
-		direccioni = sc.next();
-		inmueble.setDireccion(direccioni);
+		Inmueble.setDireccion(sc.next());
 		System.out.print("Codigo postal: ");
-		codigopostal = sc.nextInt();
-		inmueble.setCodigoPostal(codigopostal);
+		Inmueble.setCodigoPostal(sc.nextInt());
 		System.out.print("Numero de pisos: ");
-		pisos = sc.nextInt();
-		inmueble.setPisos(pisos);
+		Inmueble.setPisos(sc.nextInt());
 
 		System.out.print("\nIntroduce los siguientes datos de un espacio publico: \n");
 		System.out.print("Extension (metros cuadrados): ");
 		extension = sc.nextInt();
-		espu.setExtension(extension);
+		EspacioPublico.setExtension(extension);
 		System.out.print("Direccion: ");
 		direccionep = sc.next();
-		espu.setDireccion(direccionep);
+		EspacioPublico.setDireccion(direccionep);
 
-		Habitante.imprimirHabi();
-
-		/*System.out.println("\n---Habitante---");
+		//Habitante.imprimirHabi();
+/*
+		System.out.println("\n---Habitante---");
 		System.out.println("DNI: " + habitante.getDni());
 		System.out.println("Nombre: " + habitante.getNombre());
 		System.out.println("Primer apellido: " + habitante.getApellido1());
 		System.out.println("Segundo apellido: " + habitante.getApellido2());
 		System.out.println("Sexo: " + habitante.getSexo());
-		System.out.println("Edad: " + habitante.getEdad());*/
-
-		System.out.println("\n---Ayuntamiento---");
+		System.out.println("Edad: " + habitante.getEdad());
+*/
+		Ayuntamiento.imprimirAyu();
+		/*System.out.println("\n---Ayuntamiento---");
 		System.out.println("Poblacion: " + ayuntamiento.getPoblacion());
 		System.out.println("Localidad: " + ayuntamiento.getLocalidad());
-		System.out.println("Alcalde: " + ayuntamiento.getAlcalde());
+		System.out.println("Alcalde: " + ayuntamiento.getAlcalde());*/
 
+		Inmueble.imprimirInmu();
+/*
 		System.out.println("\n---Inmueble---");
 		System.out.println("Direccion: " + inmueble.getDireccion());
 		System.out.println("Codigo postal: " + inmueble.getCodigoPostal());
 		System.out.println("Numero de pisos: " + inmueble.getPisos());
-
+*/
+		EspacioPublico.imprimirEsPu();
+/*
 		System.out.println("\n---Espacio publico---");
-		System.out.println("Direccion: " + espu.getDireccion());
-		System.out.println("Extension: " + espu.getExtension() + " metros cuadrados");
-
+		System.out.println("Direccion: " + EspacioPublico.getDireccion());
+		System.out.println("Extension: " + EspacioPublico.getExtension() + " metros cuadrados");
+*/
+		Habitante.imprimirHabi2();
+/*
 		System.out.println("\n---Habitantes mayores de 18 años---");
 		ArrayList<Habitante> habitantes = new ArrayList<Habitante>();
-		File archihabit = new File("/home/zubiri/AriketakJava/java2_elecciones/src/censo.txt");
+		File archihabit = new File("./censo.txt");
 		Scanner sca = null;
 
 		try {
@@ -142,10 +142,11 @@ class Elecciones {
 		} catch (IOException ioe) {
 			System.out.println("Error E/S: " + ioe);
 		}
+*/
 
 		System.out.println("\n---Partidos---");
 		ArrayList<Partido> partidos = new ArrayList<Partido>();
-		File archivo = new File("/home/zubiri/AriketakJava/java2_elecciones/src/listadoPartidos.txt");
+		File archivo = new File("./listadoPartidos.txt");
 		Scanner s = null;
 
 		try {
